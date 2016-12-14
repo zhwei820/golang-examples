@@ -27,6 +27,12 @@ func f7() string {
 }
 
 func main() {
+	ttt := f7
+	fmt.Println(ttt())
+	fmt.Println("")
+	fmt.Println("")
+	fmt.Println("")
+	fmt.Println("")
 	funcs := map[string]func() string{
 		"f1": f1,
 		"f2": f2,

@@ -19,17 +19,18 @@ func main() {
 
 	fmt.Println(timeSince())
 
-	time.Sleep(1 * time.Second)
+	// time.Sleep(1 * time.Second)
 
 	fmt.Println(timeSince())
 
-	time.Sleep(120 * time.Millisecond)
+	time.Sleep(12 * time.Millisecond)
 
 	fmt.Println(timeSince())
 
-	timeSince = initTimeSeq()
-
-	time.Sleep(1300 * time.Millisecond)
+	timeSince1 := initTimeSeq()
+	fmt.Println(timeSince1())
+	fmt.Println("")
+	time.Sleep(12 * time.Millisecond)
 
 	fmt.Println(timeSince())
 

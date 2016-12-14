@@ -11,8 +11,11 @@ func main() {
 		fmt.Println("this is Println inside an anonymous goroutine")
 		stop <- true
 	}()
-	func() {
-		fmt.Println("this is Println inside an anonymous function")
-	}()
+	for ii := 0; ii < 200; ii++ {
+		func() {
+			fmt.Println("d")
+		}()
+	}
+
 	<-stop
 }

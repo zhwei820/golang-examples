@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/glenn-brown/golang-pkg-pcre/src/pkg/pcre"
 )
 

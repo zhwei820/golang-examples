@@ -76,7 +76,16 @@ func fn2() {
 func fn() {
 	log.Printf("log inside a function")
 	debug.PrintStack()
+	fmt.Println("")
+	fmt.Println("")
+	fmt.Println("")
+	fmt.Println("")
+
 	log.Printf("%v\n", string(debug.Stack()))
+	fmt.Println("")
+	fmt.Println("")
+	fmt.Println("")
+	fmt.Println("")
 	fn2()
 }
 
