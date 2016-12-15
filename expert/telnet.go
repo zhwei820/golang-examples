@@ -1,30 +1,22 @@
 package main
 
 import (
+	"bufio"
 	"flag"
 	"fmt"
 	"net"
 	"os"
 	"strings"
-	"time"
 )
 
 func handleConnection(c net.Conn, msgchan chan<- string) {
 	defer c.Close()
 	fmt.Printf("Connection from %v established.\n", c.RemoteAddr())
-	c.SetReadDeadline(time.Now().Add(time.Second * 5))
-	buf := make([]byte, 4096)
-	for {
-		n, err := c.Read(buf)
-		if (err != nil) || (n == 0) {
-			c.Close()
-			break
-		}
-		msgchan <- string(buf[0:n])
-	}
-	time.Sleep(150 * time.Millisecond)
-	fmt.Printf("Connection from %v closed.\n", c.RemoteAddr())
+	message, _ := bufio.NewReader(c).ReadString('\n')
+	fmt.Print("Message Received:", string(message))
+	c.Write([]byte("PDFLDFSDFSJDKFENEFJNSDKFNSDNFSKDJHFSDKFHJDJFDJSFLKDSJ" + "\n"))
 	c.Close()
+	fmt.Printf("Connection from %v closed.\n", c.RemoteAddr())
 	return
 }
 
@@ -41,7 +33,7 @@ func main() {
 	flag.Parse()
 	port := ":" + flag.Arg(0)
 	if port == ":" {
-		port = ":2223"
+		port = ":2333"
 	}
 	ln, err := net.Listen("tcp", port)
 	if err != nil {

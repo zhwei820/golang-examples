@@ -47,9 +47,9 @@ func tcpClientHelper(str, addr string, retry int) string {
 }
 
 func main() {
-	var host string = "baidu.com"
-	var port string = "80"
-	var request string = "GET /"
+	var host string = "localhost"
+	var port string = "2333"
+	var request string = "GET /erewrdsfsdfds"
 
 	response := tcpClient(request, host+":"+port)
 	fmt.Printf("response from %v:%v for the request \"%v\" is: \n%v\n", host, port, request, response)
