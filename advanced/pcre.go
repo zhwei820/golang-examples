@@ -28,4 +28,15 @@ func main() {
 
 	result = re.ReplaceAll([]byte("food fight fools foo"), []byte("car"), 0)
 	fmt.Printf("pcre 7: %v\n", string(result))
+
+	fmt.Println("")
+	m = pcre.MustCompile("(?<Word>\\w+)", pcre.CASELESS).MatcherString("aabbcccdddd", 0)
+	fmt.Printf("pcre 5: %v\n", m.Matches())
+
+	fmt.Println("")
+	m = pcre.MustCompile("(?<ISO8601>(?<year>\\d{4})(\\-W((?<week>\\d{1,2})\\-(?<weekday>\\d)?)|\\-(?<month>\\d{2})\\-(?<day>\\d{2})(T(?<hour>\\d{2}):(?<min>\\d{2})(:(?<sec>\\d{2})(\\+\\d{2}:\\d{2}Z?)?)?)?|\\-(?<yearday>\\d{1,3})))", pcre.CASELESS).MatcherString("aabbcccdddd", 0)
+	fmt.Printf("pcre 5: %v\n", m.Matches())
+
+	// r := pcre.MustCompile("(?<ISO8601>(?<year>\\d{4})(\\-W((?<week>\\d{1,2})\\-(?<weekday>\\d)?)|\\-(?<month>\\d{2})\\-(?<day>\\d{2})(T(?<hour>\\d{2}):(?<min>\\d{2})(:(?<sec>\\d{2})(\\+\\d{2}:\\d{2}Z?)?)?)?|\\-(?<yearday>\\d{1,3})))", pcre.CASELESS)
+
 }

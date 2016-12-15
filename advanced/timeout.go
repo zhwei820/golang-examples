@@ -15,7 +15,7 @@ func getrandom() int {
 
 func randomcalculate(i int) int {
 	var r, x int
-	for a := 0; a < 1000; a++ {
+	for a := 0; a < 100; a++ {
 		r = getrandom() / 1337
 		x = (i + r) / 42
 		fmt.Printf("%d\t+\t%d\t=\t%d\n", i, r, x)
@@ -33,7 +33,7 @@ func main() {
 	select {
 	case res := <-chanx:
 		fmt.Println(res)
-	case <-time.After(time.Millisecond * 150):
+	case <-time.After(time.Millisecond * 15000):
 		fmt.Println("timeout")
 	}
 

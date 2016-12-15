@@ -108,7 +108,7 @@ killgop $!
 echo "httpd"
 go run ./expert/httpd.go &
 sleep 10
-for i in {1..10}; do curl http://localhost:8080; done;
+for i in {1..10}; do curl http://localhost:8180; done;
 killgop $!
 
 echo "httpsd"
@@ -125,13 +125,13 @@ cd ..
 echo "cookies"
 go run ./expert/cookies.go &
 sleep 10
-for i in {1..2}; do curl http://localhost:8080; done;
+for i in {1..2}; do curl http://localhost:8180; done;
 killgop $!
 
 echo "proxy"
 go run ./expert/proxy.go &
 sleep 10
-curl https://localhost:8080 --insecure
+curl https://localhost:8180 --insecure
 killgop $!
 
 echo "ppk-crypto"

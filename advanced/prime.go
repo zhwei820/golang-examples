@@ -27,7 +27,7 @@ func Sqrt(n int) int {
 	return int(r)
 }
 
-func getPrime(n int) int {
+func getPrime(n int) []int {
 	var primeList = []int{2}
 	var isPrime int = 1
 	var num int = 3
@@ -49,7 +49,7 @@ func getPrime(n int) int {
 		}
 		num = num + 2
 	}
-	return primeList[n-1]
+	return primeList
 }
 
 func main() {
@@ -60,5 +60,6 @@ func main() {
 		fmt.Println("please provide a number")
 		os.Exit(2)
 	}
+	fmt.Println(i)
 	fmt.Println(getPrime(i))
 }

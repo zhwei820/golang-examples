@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"image/color"
 	"image/png"
 	"log"
@@ -30,7 +31,7 @@ func main() {
 		for x := b.Min.X; x < b.Max.X; x++ {
 			oldPixel := img.At(x, y)
 			_, g, _, a := oldPixel.RGBA()
-			//fmt.Println(r, g, b, a)
+			fmt.Println(g, b, a)
 			pixel := color.RGBA{uint8(g), uint8(g), uint8(g), uint8(a)}
 			imgSet.Set(x, y, pixel)
 		}

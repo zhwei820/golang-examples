@@ -56,10 +56,10 @@ func main() {
 	var err error
 	var ler string
 	for !stopvar {
-		listener, err = net.Listen("tcp", ":8080")
+		listener, err = net.Listen("tcp", ":8180")
 
 		if err == nil {
-			log.Printf("started listener on port 8080 with counter: %v\n", requestcounter)
+			log.Printf("started listener on port 8180 with counter: %v\n", requestcounter)
 			h := &handler{ServeMux: http.NewServeMux()}
 
 			h.ServeMux.HandleFunc("/", normal)

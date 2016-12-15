@@ -26,7 +26,7 @@ func main() {
 
 	start = time.Now()
 
-	for i := 0; i < 1600000; i++ {
+	for i := 0; i < 160000000; i++ {
 		plusP(&value)
 	}
 
@@ -37,7 +37,7 @@ func main() {
 
 	start = time.Now()
 
-	for i := 0; i < 1600000; i++ {
+	for i := 0; i < 160000000; i++ {
 		plusPpp(&value)
 	}
 
@@ -48,7 +48,7 @@ func main() {
 
 	start = time.Now()
 
-	for i := 0; i < 1600000; i++ {
+	for i := 0; i < 160000000; i++ {
 		value = plus(value)
 	}
 
