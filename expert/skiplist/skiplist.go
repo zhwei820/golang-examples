@@ -18,7 +18,10 @@ func main() {
 	elem := list.Get(34) // Value is stored in elem.Value.
 	fmt.Println(elem.Value)
 	next := elem.Next() // Get next element.
-	fmt.Println(next.Value)
+	if next != nil {
+		fmt.Println(next)
+		fmt.Println(next.Value)
+	}
 
 	// Or get value directly just like a map
 	val, ok := list.GetValue(34)
